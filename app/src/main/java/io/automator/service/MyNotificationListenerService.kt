@@ -20,10 +20,10 @@ class MyNotificationListenerService : NotificationListenerService() {
         if (notificationText != null) {
             if (notificationText.uppercase().contains("V50")) {
                 // 打开 app
-                val intent = packageManager.getLaunchIntentForPackage(sbn.packageName)
+                val intent = packageManager.getLaunchIntentForPackage("com.ss.android.lark")
                 intent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-                Log.i("Automator", "Open app: ${sbn.packageName}")
+                Log.i("Automator", "Detect app: ${sbn.packageName}, open: lark")
 
                 try {
                     val device = UiDevice.getInstance(Instrumentation())
